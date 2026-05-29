@@ -3,6 +3,23 @@
 Download the latest Windows build from [Releases](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases).
 
 ## Release history
+
+### v44.03
+
+- Fixed: isometric voxel view depth buffer used a constant z, which caused z-fighting and stippled faces; ortho and perspective now use view-space depth
+- Fixed: perspective voxel view no longer rasterizes faces with clipped or invalid vertices, which produced screen-spanning triangles and heavy lag at some camera angles
+- Fixed: loading overlay shows loadingAnimation.gif circuit preview when the file is beside the exe or under release/assets
+- Added: wire probing (P on cursor) with oscilloscope panel showing digital charge traces per simulation tick (View menu to toggle panel; up to 8 probes; highlighted wires on canvas)
+- Improved: shared imgui panel toolbar helpers (main viewport menu styling + oscilloscope theme); scope View menu left and zoom/fit cluster right; bottom bar shows selected-probe period/frequency and is no longer clipped
+- Fixed: scope View menu popup padding no longer double-pops imgui style stack (PopStyleVar/PopStyleColor errors)
+- Changed: probed wire canvas outlines are thicker and match scope trace colors
+- Added: oscilloscope Data menu with CSV import/export (settings, markers, reserved header rows, then sample data); marker/cursor overview positions use closest tick match and zoomed viewport mapping on the main plot
+- Changed: status bar history controls (rewind, play, timeline toggle, node count) moved into a History drop-up menu with main-menu popup padding; undo and redo stay as buttons
+- Changed: history viewer panel uses dark green theme, toolbar title reads History viewer
+- Fixed: pause, edit canvas, then resume or step no longer resets all wire charges to zero (charges are preserved by pixel-to-wire mapping; merged wires take the max of contributing prior charges)
+- Fixed: paused single-step after edits syncs the full canvas from simulation once so unchanged wires do not flash stale pixel colors for one frame
+
+[Download v44.03](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.03)
 
 ### v44.02
 
@@ -43,3 +60,4 @@ Download the latest Windows build from [Releases](https://github.com/ayan20985/b
 - Improved: when zoomed in, only the visible canvas region is drawn to the screen
 
 [Download v44.01](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.01)
+
