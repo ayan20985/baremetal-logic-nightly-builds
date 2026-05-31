@@ -3,7 +3,31 @@
 Download the latest Windows build from [Releases](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases).
 
 ## Release history
-
+
+### v44.04
+
+- Added: centralized keybinds module (keybinds.cpp) with userKeybinds.csv persistence, Settings menu (keybinds window, keyboard settings, reset keybinds, reset settings), and help text driven by current bindings
+- Added: userSettings.csv beside the executable persists view toggles (3d on/off, live 3d, live minimap, oscilloscope, history timeline, help, layer mode, wire type, stepping mode, scope display options, minimap/3d panel sizes, history panel height, and keyboard cursor repeat timing); defaults stay in code and the file is written only when settings differ from defaults
+- Added: secondary keybind slot for every binding; keybind settings grouped by category with grey headers matching the main ui
+- Added: keyboard-only canvas editing (arrow cursor with timed repeat, hold T for lines, view follows cursor, edge wrap, copy/paste at cursor without mouse)
+- Added: keyboard settings window for cursor repeat delay and rates (defaults: 8 tiles/s after 1 s hold, 24 tiles/s after 5 s total hold)
+- Added: G toggles keyboard selection (anchor at G, opposite corner follows cursor; click locks; ctrl+c copies and clears)
+- Added: selection and clipboard shortcuts (ctrl+c/v/x on highlighted area, enter to place paste, home to clear selection)
+- Added: ctrl+t as toggle-pixel draw with crossing (xor) enabled; hold X for crossing on mouse drags
+- Added: View menu item for all layers below (L) with keybind label
+- Changed: all panel windows standardized to hidden topbars and compact toolbars for consistent extension of the ui
+- Changed: help window uses keybind categories in two columns (view on the left); section headers sit outside bordered bodies; inner tables keep two columns without double borders; help text wraps within columns
+- Changed: oscilloscope clock lines mark falling edges (vertical lines) like rising edges
+- Changed: open and save keybinds list ctrl+o / ctrl+s before o / s in settings and defaults
+- Fixed: keys held while another app has focus no longer trigger keybinds when returning to the game until they are released
+- Fixed: paused edits on a layer are kept when switching to another layer and back
+- Fixed: history Fit/Current toolbar when the history list is empty
+- Fixed: focus return no longer fires stuck keybinds (e.g. open on O after alt-tab)
+- Fixed: ctrl shortcuts (save, open, copy, cut, paste, undo, redo) dispatch before imgui consumes them
+- Fixed: scrolling in settings/keybinds windows no longer zooms the main canvas
+
+[Download v44.04](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.04)
+
 ### v44.03
 
 - Fixed: isometric voxel view depth buffer used a constant z, which caused z-fighting and stippled faces; ortho and perspective now use view-space depth
@@ -60,4 +84,5 @@ Download the latest Windows build from [Releases](https://github.com/ayan20985/b
 - Improved: when zoomed in, only the visible canvas region is drawn to the screen
 
 [Download v44.01](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.01)
+
 
