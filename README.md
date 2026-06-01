@@ -3,7 +3,15 @@
 Download the latest Windows build from [Releases](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases).
 
 ## Release history
-
+
+### v44.05
+
+- Added: os clipboard integration for blueprints (BAREMETAL_BLUEPRINT_V1 text format; safe to paste into other apps; paste ignores foreign clipboard data)
+- Fixed: cross-instance blueprint paste uses windows crlf in clipboard text, we refresh clipboard on window focus and accept palette indices 1..7 when deserializing.
+- Changed: some default commands to have less conflictls, namely t being for toggle and for fliiping blueprints.
+
+[Download v44.05](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.05)
+
 ### v44.04
 
 - Added: centralized keybinds module (keybinds.cpp) with userKeybinds.csv persistence, Settings menu (keybinds window, keyboard settings, reset keybinds, reset settings), and help text driven by current bindings
@@ -84,5 +92,6 @@ Download the latest Windows build from [Releases](https://github.com/ayan20985/b
 - Improved: when zoomed in, only the visible canvas region is drawn to the screen
 
 [Download v44.01](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.01)
+
 
 
