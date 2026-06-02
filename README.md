@@ -3,7 +3,17 @@
 Download the latest Windows build from [Releases](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases).
 
 ## Release history
-
+
+### v44.07
+
+- Changed: 3d viewer renders on the gpu (opengl 3.3) instead of a per-frame cpu rasterizer; static camera skips redraw; live sim updates refresh voxel colors without rebuilding geometry from the canvas
+- Added: 3d viewer has a bottom toolbar with fps readout, GPU/Raster label, and fps cap control (default 60, cycles 15/30/60/off)
+- Added: on windows, enumerate dxgi adapters at boot, pick the highest-scoring gpu (prefers discrete nvidia/amd), export optimus hints, and recreate the 3d opengl context on the chosen gpu when needed
+- Fixed: 3d viewer face winding and double-sided gpu draw (ccw+cw passes) so top and bottom caps stay visible from any camera angle; voxel cache rebuilds at draw when dirty; all simulation layers included via getWireColor
+- Fixed: simulation tps no longer drops 10-50x while the 3d panel is open, there is a fallabck back to cached software raster if gpu init fails though
+
+[Download v44.07](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.07)
+
 ### v44.06
 
 - Fixed: blueprint rotation and flip are kept when placing paste (no longer reload from os clipboard on confirm)
@@ -103,6 +113,7 @@ Download the latest Windows build from [Releases](https://github.com/ayan20985/b
 - Improved: when zoomed in, only the visible canvas region is drawn to the screen
 
 [Download v44.01](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.01)
+
 
 
 
