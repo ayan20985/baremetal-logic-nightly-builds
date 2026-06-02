@@ -3,7 +3,18 @@
 Download the latest Windows build from [Releases](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases).
 
 ## Release history
-
+
+### v44.06
+
+- Fixed: blueprint rotation and flip are kept when placing paste (no longer reload from os clipboard on confirm)
+- Fixed: minus (-) keybind shows as "Minus" in settings; unbound slots show "(none)" instead of "-"
+- Fixed: blueprint paste mode blocks line draw on click; toggle pixel is suppressed when the same key confirms paste
+- Changed: left click in paste mode only places the blueprint (no extra pixel or line tool)
+- Fixed: Ctrl, Shift, Alt, and Caps can be bound on their own (release after press in keybind capture) and work in combos with other keys
+- Fixed: paused step and canvas composite now read wire voltage from the simulation so edited wires no longer leave sections stuck at placement 0V
+
+[Download v44.06](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.06)
+
 ### v44.05
 
 - Added: os clipboard integration for blueprints (BAREMETAL_BLUEPRINT_V1 text format; safe to paste into other apps; paste ignores foreign clipboard data)
@@ -92,6 +103,7 @@ Download the latest Windows build from [Releases](https://github.com/ayan20985/b
 - Improved: when zoomed in, only the visible canvas region is drawn to the screen
 
 [Download v44.01](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.01)
+
 
 
 
