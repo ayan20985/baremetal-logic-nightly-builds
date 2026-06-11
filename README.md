@@ -3,7 +3,13 @@
 Download the latest Windows build from [Releases](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases).
 
 ## Release history
-
+
+### v45
+
+- All changes of previous subversions.
+
+[Download v45](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v45)
+
 ### v44.07
 
 - Changed: 3d viewer renders on the gpu (opengl 3.3) instead of a per-frame cpu rasterizer; static camera skips redraw; live sim updates refresh voxel colors without rebuilding geometry from the canvas
@@ -113,6 +119,7 @@ Download the latest Windows build from [Releases](https://github.com/ayan20985/b
 - Improved: when zoomed in, only the visible canvas region is drawn to the screen
 
 [Download v44.01](https://github.com/ayan20985/baremetal-logic-nightly-builds/releases/tag/v44.01)
+
 
 
 
